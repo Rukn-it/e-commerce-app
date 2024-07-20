@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:trailing_e_commerce_app/view%20layer/util/theme/theme_app.dart';
+import 'package:trailing_e_commerce_app/util/theme/theme_app.dart';
 
 import 'data layer/providers/providers_list.dart';
-import 'view layer/util/router/route_management.dart';
+import 'util/router/route_management.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

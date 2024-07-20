@@ -41,6 +41,7 @@ dependencies:
   intl:
   fluttertoast:
   flutter_spinkit:
+  connectivity_plus: ^6.0.3
 
 
 dev_dependencies:
