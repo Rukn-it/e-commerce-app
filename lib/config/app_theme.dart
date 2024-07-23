@@ -16,7 +16,7 @@ abstract final class AppTheme {
       colorScheme: theme.colorScheme.copyWith(primary: primaryColor),
       canvasColor: Colors.transparent,
       appBarTheme: theme.appBarTheme.copyWith(
-        backgroundColor: primaryColor[400],
+        backgroundColor: primaryColor,
         foregroundColor: Colors.white,
         centerTitle: true,
         titleTextStyle: TextStyles.largeBold,
