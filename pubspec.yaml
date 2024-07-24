@@ -41,7 +41,8 @@ dependencies:
   intl:
   fluttertoast:
   flutter_spinkit:
-  connectivity_plus: ^6.0.3
+  # connectivity_plus: ^6.0.3
+  dot_curved_bottom_nav: ^0.0.2
 
 
 dev_dependencies:
