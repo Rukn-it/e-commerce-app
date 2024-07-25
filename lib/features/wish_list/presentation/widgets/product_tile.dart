@@ -5,7 +5,7 @@ import '../../../../core/constants/text_styles.dart';
 import '../../../../core/core.dart';
 
 
-class ProductTile extends StatelessWidget {
+class ProductTile extends StatefulWidget {
   const ProductTile({
     super.key,
     required this.screenHeight,
@@ -16,9 +16,15 @@ class ProductTile extends StatelessWidget {
   final double screenWeidth;
 
   @override
+  State<ProductTile> createState() => _ProductTileState();
+}
+
+class _ProductTileState extends State<ProductTile> {
+  bool isFavorited = false;
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: screenHeight * 0.2,
+      height: widget.screenHeight * 0.2,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -26,7 +32,7 @@ class ProductTile extends StatelessWidget {
             flex: 5,
             child: Container(
               padding:const EdgeInsets.all(15),
-              width:screenWeidth ,
+              width:widget.screenWeidth ,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 color: primaryColor,
@@ -38,10 +44,19 @@ class ProductTile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  CircleAvatar(
-                    radius: 18,
-                    backgroundColor: secondColor.withOpacity(0.8),
-                    child:const Icon(Icons.favorite_border, color: primaryColor,),
+                  InkWell(
+                    onTap: () {
+                            setState(() {
+                              isFavorited = !isFavorited;
+                            });
+                          },
+                    child: CircleAvatar(
+                      radius: 18,
+                      backgroundColor: secondColor.withOpacity(0.8),
+                      child: Icon(
+                        isFavorited ? Icons.favorite : Icons.favorite_border,
+                        color: primaryColor,),
+                    ),
                   )
                 ],
               ),

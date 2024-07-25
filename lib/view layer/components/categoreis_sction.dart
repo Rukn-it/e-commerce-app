@@ -13,7 +13,7 @@ class CategoriesSction extends StatefulWidget {
 }
 
 class _CategoriesSctionState extends State<CategoriesSction> {
-    int _selectedIndex = 1;
+    int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -36,25 +36,30 @@ class _CategoriesSctionState extends State<CategoriesSction> {
                         child: Container(
                           margin: const EdgeInsets.only(
                               top: 10, bottom: 15, right: 10),
-                          padding:const EdgeInsets.only(left: 20, right: 20,top: 10, bottom: 10),
+                          padding:const EdgeInsets.only(left: 20, right: 20,top: 5, bottom: 5),
                          
                           decoration: BoxDecoration(
                             color: _selectedIndex == index
                                 ? primaryColor
                                 : scaffoldColor.withOpacity(0.5),
                             borderRadius: BorderRadius.circular(25),
-                            border: Border.all(color:Colors.black45 )
+                            border:_selectedIndex != index? Border.all(color:Colors.black26 ):null
                           ),
                           child: Center(
                             child: 
                             //TO-DO:put category name from API here 
                             Text("All",
-                            style:TextStyles.largeBold
+                            style:_selectedIndex == index?
+                            TextStyles.largeBold
                             .copyWith(
-                             color:  _selectedIndex == index
-                             ?Colors.white
-                             :Colors.black
+                             color:Colors.white
+                            
+                             )
+                             :TextStyles.largeMedium
+                            .copyWith(
+                             color:Colors.black
                              ),
+
                             softWrap: true,
                             textAlign: TextAlign.center,
                             ),
