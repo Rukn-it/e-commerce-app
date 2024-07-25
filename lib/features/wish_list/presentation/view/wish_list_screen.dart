@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:trailing_e_commerce_app/view%20layer/components/categoreis_sction.dart';
 import 'package:trailing_e_commerce_app/view%20layer/components/custom_appbar.dart';
 
+import '../widgets/product_show_sction.dart';
+
 class WishListScreen extends StatelessWidget {
    const WishListScreen({super.key});
   @override
@@ -18,7 +20,7 @@ class WishListScreen extends StatelessWidget {
            
             SizedBox(height: 20),
           
-          
+           ProductShowSection()
             ],
         ),
       ),

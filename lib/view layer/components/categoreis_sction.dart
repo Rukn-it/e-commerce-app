@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:trailing_e_commerce_app/core/constants/app_colors.dart';
+import 'package:trailing_e_commerce_app/core/constants/text_styles.dart';
+
+import '../../core/core.dart';
+
+
 
 class CategoriesSction extends StatefulWidget {
   const CategoriesSction({super.key});
@@ -9,7 +13,7 @@ class CategoriesSction extends StatefulWidget {
 }
 
 class _CategoriesSctionState extends State<CategoriesSction> {
-    int _selectedIndex = -1;
+    int _selectedIndex = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +36,7 @@ class _CategoriesSctionState extends State<CategoriesSction> {
                         child: Container(
                           margin: const EdgeInsets.only(
                               top: 10, bottom: 15, right: 10),
-                          padding: EdgeInsets.only(left: 20, right: 20,top: 10, bottom: 10),
+                          padding:const EdgeInsets.only(left: 20, right: 20,top: 10, bottom: 10),
                          
                           decoration: BoxDecoration(
                             color: _selectedIndex == index
@@ -45,7 +49,8 @@ class _CategoriesSctionState extends State<CategoriesSction> {
                             child: 
                             //TO-DO:put category name from API here 
                             Text("All",
-                            style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                            style:TextStyles.largeBold
+                            .copyWith(
                              color:  _selectedIndex == index
                              ?Colors.white
                              :Colors.black
