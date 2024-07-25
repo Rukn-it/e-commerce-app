@@ -2,7 +2,7 @@ import 'package:flutter/painting.dart' show TextStyle;
 
 import 'font_weights.dart';
 
-const String appFont = 'Cairo';
+const String appFont = 'Inter';
 
 abstract final class TextStyles {
   static const TextStyle heading1Bold = TextStyle(
