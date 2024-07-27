@@ -15,15 +15,15 @@ class HomeSearchBar extends StatelessWidget {
         Expanded(
             child: SearchBar(
 
-              shadowColor: WidgetStateProperty.all(Colors.transparent),
-          side: WidgetStateProperty.all(const BorderSide(color: Colors.grey)),
+              shadowColor: MaterialStatePropertyAll(Colors.transparent),
+          side: MaterialStatePropertyAll(const BorderSide(color: Colors.grey)),
           leading: const Icon(
             Icons.search,
             color: primaryColor,
           ),
-          backgroundColor: WidgetStateProperty.all(Colors.white),
+          backgroundColor: MaterialStatePropertyAll(Colors.white),
           hintText: "Search",
-          hintStyle: WidgetStateProperty.all(const TextStyle(fontSize: 15)),
+          hintStyle: MaterialStatePropertyAll(const TextStyle(fontSize: 15)),
         )),
         const SizedBox(width: 10),
         Container(
