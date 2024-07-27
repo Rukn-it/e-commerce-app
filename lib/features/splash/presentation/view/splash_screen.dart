@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trailing_e_commerce_app/features/wish_list/presentation/view/wish_list_screen.dart';
 
 import '../../../../core/core.dart';
 
@@ -33,14 +34,14 @@ class _SplashScreenState extends State<SplashScreen> {
 }
 
 _checkAuth(BuildContext context)async{
-  // await Future.delayed(const Duration(seconds: 3));
-  //   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
-  //     // if(SharedPrefsHelper.getString('token')==null) {
-  //     //   return LoginPage();
-  //     // } else {
-  //       return const HomeScreen();
-  //     // }
-  //   }));
+  await Future.delayed(const Duration(seconds: 3));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+      // if(SharedPrefsHelper.getString('token')==null) {
+      //   return LoginPage();
+      // } else {
+        return  WishListScreen();
+      // }
+    }));
 }
 
 
