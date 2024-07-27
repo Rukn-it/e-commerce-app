@@ -1,7 +1,9 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart' show TextStyle;
-
+import 'package:trailing_e_commerce_app/core/constants/app_colors.dart';
 import 'font_weights.dart';
-
 const String appFont = 'Inter';
 
 abstract final class TextStyles {
@@ -21,6 +23,7 @@ abstract final class TextStyles {
     fontSize: 20,
     fontWeight: FontWeights.bold,
     fontFamily: appFont,
+      color: Colors.black
   );
   static const TextStyle heading3Medium = TextStyle(
     fontSize: 20,
@@ -43,6 +46,7 @@ abstract final class TextStyles {
     fontSize: 16,
     fontWeight: FontWeights.bold,
     fontFamily: appFont,
+
   );
   static const TextStyle largeMedium = TextStyle(
     fontSize: 16,
@@ -64,6 +68,7 @@ abstract final class TextStyles {
     fontSize: 14,
     fontWeight: FontWeights.medium,
     fontFamily: appFont,
+    color: secondColor,
   );
   static const TextStyle mediumRegular = TextStyle(
     fontSize: 14,
@@ -85,12 +90,14 @@ abstract final class TextStyles {
     fontSize: 12,
     fontWeight: FontWeights.medium,
     fontFamily: appFont,
+    color: Colors.black87
   );
 
   static const TextStyle xSmallRegular = TextStyle(
     fontSize: 10,
     fontWeight: FontWeights.regular,
     fontFamily: appFont,
+    color: Colors.black54
   );
   static const TextStyle xSmallBold = TextStyle(
     fontSize: 10,
