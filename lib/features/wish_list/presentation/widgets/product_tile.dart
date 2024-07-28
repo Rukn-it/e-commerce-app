@@ -37,8 +37,8 @@ class _ProductTileState extends State<ProductTile> {
                 borderRadius: BorderRadius.circular(15),
                 color: primaryColor,
                 image:const DecorationImage(
-                 image: AssetImage("assets/images/brown-jacket.webp"),
-                 fit: BoxFit.cover,
+                 image: AssetImage("assets/images/brown-jacket.jpg"),
+                 fit: BoxFit.fill,
                ), 
               ),
               child: Column(
