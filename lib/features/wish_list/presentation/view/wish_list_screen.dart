@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:trailing_e_commerce_app/view%20layer/components/categoreis_sction.dart';
-import 'package:trailing_e_commerce_app/view%20layer/components/custom_appbar.dart';
+import 'package:trailing_e_commerce_app/core/components/categoreis_sction.dart';
+import 'package:trailing_e_commerce_app/core/components/custom_appbar.dart';
 
 import '../widgets/product_show_sction.dart';
 

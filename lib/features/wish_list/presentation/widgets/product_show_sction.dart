@@ -1,7 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:trailing_e_commerce_app/core/constants/text_styles.dart';
-import 'package:trailing_e_commerce_app/core/core.dart';
 import 'package:trailing_e_commerce_app/features/wish_list/presentation/widgets/product_tile.dart';
 
 

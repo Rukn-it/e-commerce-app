@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trailing_e_commerce_app/core/constants/text_styles.dart';
 
-import '../../core/core.dart';
+import '../core.dart';
 
 
 
