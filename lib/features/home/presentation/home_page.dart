@@ -53,7 +53,6 @@ class HomePage extends StatelessWidget {
               SliverFillRemaining(
                 hasScrollBody: false,
                 child: Container(
-                  color: Colors.white,
                   height: 50,
                 ),
               ),
