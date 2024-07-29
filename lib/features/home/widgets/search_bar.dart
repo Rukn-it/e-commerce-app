@@ -12,18 +12,18 @@ class HomeSearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
+        const Expanded(
             child: SearchBar(
 
-              shadowColor: WidgetStateProperty.all(Colors.transparent),
-          side: WidgetStateProperty.all(const BorderSide(color: Colors.grey)),
-          leading: const Icon(
+              shadowColor: WidgetStatePropertyAll(Colors.transparent),
+          side: WidgetStatePropertyAll(BorderSide(color: Colors.grey)),
+          leading: Icon(
             Icons.search,
             color: primaryColor,
           ),
-          backgroundColor: WidgetStateProperty.all(Colors.white),
+          backgroundColor: WidgetStatePropertyAll(Colors.white),
           hintText: "Search",
-          hintStyle: WidgetStateProperty.all(const TextStyle(fontSize: 15)),
+          hintStyle: MaterialStatePropertyAll(TextStyle(fontSize: 15)),
         )),
         const SizedBox(width: 10),
         Container(
