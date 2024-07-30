@@ -12,11 +12,11 @@ abstract final class AppTheme {
     return theme.copyWith(
       primaryColor: primaryColor,
       brightness: Brightness.light,
-      scaffoldBackgroundColor: Colors.white,
+      scaffoldBackgroundColor: scaffoldColor,
       colorScheme: theme.colorScheme.copyWith(primary: primaryColor),
       canvasColor: Colors.transparent,
       appBarTheme: theme.appBarTheme.copyWith(
-        backgroundColor: primaryColor,
+        backgroundColor: scaffoldColor,
         foregroundColor: Colors.white,
         centerTitle: true,
         titleTextStyle: TextStyles.largeBold,
