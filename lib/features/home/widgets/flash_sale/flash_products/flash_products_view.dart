@@ -44,26 +44,26 @@ class FlashProductsView extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: 200,
-      child: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 70, //todo solve this
-        ),
-        itemCount: products.length,
-        itemBuilder: (context, index) {
-          final product = products[index];
-          return ProductCard(
-            imageUrl: product['imageUrl'],
-            productName: product['productName'],
-            rating: product['rating'],
-            price: product['price'],
-            onLoveButtonPressed: () {
-              //todo must be replaced
-            },
-          );
-        },
-      ),
+      // child: GridView.builder(
+      //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      //     crossAxisCount: 2,
+      //     crossAxisSpacing: 10,
+      //     mainAxisSpacing: 70, //todo solve this
+      //   ),
+      //   itemCount: products.length,
+      //   itemBuilder: (context, index) {
+      //     final product = products[index];
+      //     return ProductCard(
+      //       imageUrl: product['imageUrl'],
+      //       productName: product['productName'],
+      //       rating: product['rating'],
+      //       price: product['price'],
+      //       onLoveButtonPressed: () {
+      //         //todo must be replaced
+      //       },
+      //     );
+      //   },
+      // ),
     );
   }
 }
