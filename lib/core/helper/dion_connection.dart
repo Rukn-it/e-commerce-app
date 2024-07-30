@@ -1,15 +1,24 @@
 import 'package:dio/dio.dart';
 
-class DioConnection{
-  static  Dio? _connection;
+import 'api/end_points.dart';
+
+class DioConnection {
+  static Dio? _connection;
+
   DioConnection._Dio();
 
-  static Dio connect(){
+  static Dio get instance {
+    _connection ??= Dio(BaseOptions(
+      baseUrl: EndPoint.baseUrl,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    ));
 
-
-    _connection ??= Dio();
     return _connection!;
   }
 
+  static void setToken(String token) {
+    _connection?.options.headers['Authorization'] = 'Bearer $token';
+  }
 }
-
