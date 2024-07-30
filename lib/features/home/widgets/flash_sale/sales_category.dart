@@ -28,7 +28,8 @@ class SaleCategoryListView extends StatelessWidget {
               style: ButtonStyle(
                 //todo: back to change the state
                   backgroundColor:
-                      WidgetStgit ateProperty.all(primaryColor.withOpacity(0.3))),
+
+                      MaterialStatePropertyAll(primaryColor.withOpacity(0.3))),
               child: Padding(
                 padding: const EdgeInsets.all(5),
                 child: Text(categories[index]),
