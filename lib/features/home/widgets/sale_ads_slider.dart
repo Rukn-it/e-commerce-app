@@ -3,11 +3,50 @@ SaleAdsSlider: slider to show the ads and sale
 widget that has button to click on
  */
 
-import 'package:carousel_slider/carousel_slider.dart';
+
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
-class SaleAdsSlider extends StatelessWidget {
+class SaleAdsSlider extends StatefulWidget {
   const SaleAdsSlider({super.key});
+
+  @override
+  State<SaleAdsSlider> createState() => _SaleAdsSliderState();
+}
+
+class _SaleAdsSliderState extends State<SaleAdsSlider> {
+  int _currentPage = 0;
+
+  late Timer _timer;
+
+  final PageController _pageController = PageController(
+    initialPage: 0,
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    _timer = Timer.periodic(const Duration(seconds: 5), (Timer timer) {
+      if (_currentPage < 2) {
+        _currentPage++;
+      } else {
+        _currentPage = 0;
+      }
+
+      _pageController.animateToPage(
+        _currentPage,
+        duration: const Duration(milliseconds: 350),
+        curve: Curves.easeIn,
+      );
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _timer.cancel();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,45 +57,25 @@ class SaleAdsSlider extends StatelessWidget {
       'https://via.placeholder.com/500x200?text=Image+2',
       'https://via.placeholder.com/500x200?text=Image+3',
     ];
-    return CarouselSlider.builder(
-      itemCount: imgList.length,
-      itemBuilder: (context, index, realIndex) {
-        final imgUrl = imgList[index];
-        //todo: replace it with card that has button
-        return Container(
-          margin: const EdgeInsets.symmetric(horizontal: 5),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image.network(
-              imgUrl,
-              fit: BoxFit.cover,
-            ),
-          ),
-        );
-      },
-      options: CarouselOptions(
-        height: 150,
-        autoPlay: true,
-        autoPlayInterval: const Duration(seconds: 3),
-        initialPage: 0,
+
+
+    return SizedBox(
+      height: 150,
+      child: PageView.builder(
+        controller: _pageController,
+        itemCount: imgList.length,
+        itemBuilder: (context, index) {
+          final imgUrl = imgList[index];
+          //todo: replace it with card that has button
+          return Image.network(
+
+            imgUrl,
+            fit: BoxFit.cover,
+          );
+        },
+        pageSnapping: true,
       ),
     );
   }
 }
 
-/*
- Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: imgList.asMap().entries.map((entry) {
-            return Container(
-              width: 12,
-              height: 12,
-              margin: const EdgeInsets.symmetric(horizontal: 5),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _currentIndex == entry.key
-                    ? Colors.blue
-                    : Colors.grey,
-              ),
-            );
- */
