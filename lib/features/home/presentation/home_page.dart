@@ -17,6 +17,7 @@ class HomePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 5),
           child: CustomScrollView(
+            key: Key("1"),
             slivers: [
               const SliverToBoxAdapter(
                 child:       Column(
@@ -48,7 +49,8 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               //all products based on selected category on sale
-              FlashProductsView(),
+
+              // FlashProductsView(),
               //space to make sure all items showed up
               SliverFillRemaining(
                 hasScrollBody: false,
