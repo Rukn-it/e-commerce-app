@@ -3,21 +3,19 @@ This code is the home page; search for SECTION to find main components
  */
 
 import 'package:flutter/material.dart';
-
-import '../widgets/flash_sale/sales_category.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../widgets/widgets.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends ConsumerWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 5),
           child: CustomScrollView(
-            key: Key("1"),
             slivers: [
               const SliverToBoxAdapter(
                 child:       Column(
@@ -50,7 +48,7 @@ class HomePage extends StatelessWidget {
               ),
               //all products based on selected category on sale
 
-              // FlashProductsView(),
+               const FlashProductsView(),
               //space to make sure all items showed up
               SliverFillRemaining(
                 hasScrollBody: false,

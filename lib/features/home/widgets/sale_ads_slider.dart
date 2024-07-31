@@ -5,8 +5,8 @@ widget that has button to click on
 
 
 import 'dart:async';
-
 import 'package:flutter/material.dart';
+import '../data/sales_images.dart';
 
 class SaleAdsSlider extends StatefulWidget {
   const SaleAdsSlider({super.key});
@@ -28,7 +28,7 @@ class _SaleAdsSliderState extends State<SaleAdsSlider> {
   void initState() {
     super.initState();
     _timer = Timer.periodic(const Duration(seconds: 5), (Timer timer) {
-      if (_currentPage < 2) {
+      if (_currentPage < adsImgList.length) {
         _currentPage++;
       } else {
         _currentPage = 0;
@@ -50,22 +50,17 @@ class _SaleAdsSliderState extends State<SaleAdsSlider> {
 
   @override
   Widget build(BuildContext context) {
-    //todo should be replaced
 
-    final List<String> imgList = [
-      'https://via.placeholder.com/500x200?text=Image+1',
-      'https://via.placeholder.com/500x200?text=Image+2',
-      'https://via.placeholder.com/500x200?text=Image+3',
-    ];
+
 
 
     return SizedBox(
       height: 150,
       child: PageView.builder(
         controller: _pageController,
-        itemCount: imgList.length,
+        itemCount: adsImgList.length,
         itemBuilder: (context, index) {
-          final imgUrl = imgList[index];
+          final imgUrl = adsImgList[index];
           //todo: replace it with card that has button
           return Image.network(
 
