@@ -47,7 +47,7 @@ const  ProductShowSection({
     );
       },
       //بعدين عدلي حق الخطأ
-      error: (error, stack)=>Text("Error"),
+      error: (error, stack)=>Text(error.toString()),
       loading: ()=>const Center(
         child: CircularProgressIndicator(),
       )
