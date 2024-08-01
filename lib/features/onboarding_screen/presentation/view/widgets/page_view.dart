@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trailing_e_commerce_app/core/constants/text_styles.dart';
-import 'package:trailing_e_commerce_app/features/onboarding_screen/data/onboarding_model.dart';
-import 'arrows_section.dart';
+
+import '../../../data/onboarding_model.dart';
 
 class OnboardingPageView extends StatelessWidget {
   final int currentIndex;
@@ -25,16 +25,22 @@ class OnboardingPageView extends StatelessWidget {
         onPageChanged: onPageChanged,
         itemBuilder: (context, index) => Column(
           children: [
-
-            Padding(
-              padding: const EdgeInsets.only( left: 40, right: 40),
-              child: Image.asset(
-                onboardingItems[index].image,
-                height: 350,
+            Container( // ******* 3 imagesContainer
+              width: 200 ,
+              height: 300,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage( onboardingItems[index].image,),
+                  fit: BoxFit.fitWidth,
+                ),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25),
+                  topRight: Radius.circular(25),
+                ),
               ),
             ),
             Expanded(
-              child: Container(
+              child: Container( // ***** Curved Container
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -47,15 +53,13 @@ class OnboardingPageView extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
+                      SizedBox(height: 25),
                       onboardingItems[index].title,
-                      SizedBox(height: 5),
-                      Text(
-                        onboardingItems[index].descreption,
+                      SizedBox(height: 20),
+                      Text( onboardingItems[index].descreption,
                         style: TextStyles.xSmallRegular,
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(height: 25),
-                      ArrowSection( controller: controller,),
                     ],
                   ),
                 ),

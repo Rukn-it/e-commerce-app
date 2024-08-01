@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/font_weights.dart';
-import '../../../core/constants/text_styles.dart';
+import '../../../../core/constants/app_colors.dart';
+import '../../../../core/constants/font_weights.dart';
+import '../../../../core/constants/text_styles.dart';
 class OnBoarding {
   final RichText title;
   final String image;
@@ -36,7 +36,7 @@ List<OnBoarding> onboardingItems = [
         ],
       ),
     ),
-    image: 'assets/images/onboarding/1.png',
+    image: 'assets/images/onboarding/11.png',
     descreption: 'Lorem ipsum dolor eit amit, consectetur \n'
         ' adipiscing elit, set do eiusmod tempor incididunt',
   ),
@@ -60,13 +60,13 @@ List<OnBoarding> onboardingItems = [
             ),
           ),
           TextSpan(
-            text: 'Begin',
+            text: ' Begin',
             style: TextStyles.heading3Bold,
           ),
         ],
       ),
     ),
-    image: 'assets/images/onboarding/2.png',
+    image: 'assets/images/onboarding/22.png',
     descreption: 'Lorem ipsum dolor eit amit, consectetur \n'
         ' adipiscing elit, set do eiusmod tempor incididunt',
   ),
@@ -105,7 +105,7 @@ List<OnBoarding> onboardingItems = [
         ],
       ),
     ),
-    image: 'assets/images/onboarding/3.jpg',
+    image: 'assets/images/onboarding/33.png',
     descreption: 'Lorem ipsum dolor eit amit, consectetur \n'
         ' adipiscing elit, set do eiusmod tempor incididunt',
   ), ];

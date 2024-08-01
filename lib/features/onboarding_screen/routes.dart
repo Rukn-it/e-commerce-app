@@ -4,8 +4,6 @@ import 'presentation/view/onboarding_screen.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'presentation/view/providers/onboarding_provider.dart';
-import 'presentation/view/widgets/skip_section.dart';
-
 
 class AppRoutes {
   static GoRouter createRouter(WidgetRef ref) {
@@ -29,18 +27,3 @@ class AppRoutes {
   }
 }
 
-class RouteGenerator {
-  static const String onboardingPage = '/features/onboarding_screen/presentation/view/onboarding_screen.dart';
-  static const String WelcomePage = '/features/welcome_screen/presentation/view/welcome_screen.dart';
-
-  static Route<dynamic> generateRoute(RouteSettings settings) {
-    switch (settings.name) {
-      case onboardingPage:
-        return MaterialPageRoute(builder: (_) => OnbordingScreen());
-      case WelcomePage:
-        return MaterialPageRoute(builder: (_) => WelcomeBody());
-      default:
-        return MaterialPageRoute(builder: (_) =>OnbordingScreen());
-    }
-  }
-}
