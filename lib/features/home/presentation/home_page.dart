@@ -16,7 +16,8 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(top: 8, right: 8, left: 8),
-          child: Stack(children: [
+          child: Stack(
+              children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

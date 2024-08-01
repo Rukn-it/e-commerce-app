@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trailing_e_commerce_app/core/constants/app_colors.dart';
 import 'package:trailing_e_commerce_app/core/constants/text_styles.dart';
 
+
 class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({super.key});
 
