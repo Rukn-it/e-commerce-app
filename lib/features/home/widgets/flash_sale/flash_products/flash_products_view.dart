@@ -45,6 +45,7 @@ class FlashProductsView extends StatelessWidget {
       width: double.infinity,
       height: 200,
       child: GridView.builder(
+      
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,

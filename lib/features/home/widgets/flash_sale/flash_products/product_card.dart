@@ -80,6 +80,9 @@ class ProductCard extends StatelessWidget {
                 '\$${price.toStringAsFixed(2)}',
 
               ),
+              ElevatedButton(onPressed: (){
+              showDialog(context: context, builder: (context) => AlertDialog.adaptive(),);
+              }, child: Text("data"))
             ],
           ),
         ],
