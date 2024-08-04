@@ -4,6 +4,7 @@ This code is the home page; search for SECTION to find main components
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../core/constants/app_dimensions.dart';
 import '../widgets/widgets.dart';
 
 class HomePage extends ConsumerWidget {
@@ -53,7 +54,7 @@ class HomePage extends ConsumerWidget {
               SliverFillRemaining(
                 hasScrollBody: false,
                 child: Container(
-                  height: 50,
+                  height: AppDimensions.widgetHeight,
                 ),
               ),
             ],
