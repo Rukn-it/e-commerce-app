@@ -1,7 +1,5 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart' show TextStyle;
 import 'package:trailing_e_commerce_app/core/constants/app_colors.dart';
 import 'font_weights.dart';
 const String appFont = 'Inter';

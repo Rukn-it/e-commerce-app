@@ -1,5 +1,3 @@
-import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/constants/font_weights.dart';
@@ -7,10 +5,12 @@ import '../../../../core/constants/text_styles.dart';
 import '../../../../core/constants/app_colors.dart';
 
 void main() {
-  runApp(Welcome());
+  runApp(const Welcome());
 }
 
 class Welcome extends StatelessWidget {
+  const Welcome({super.key});
+
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
@@ -80,7 +80,7 @@ class Welcome extends StatelessWidget {
                                   width: 150,
                                   height: 340,
                                   decoration: BoxDecoration(
-                                    image: DecorationImage(
+                                    image: const DecorationImage(
                                       image: AssetImage('assets/images/welcome/2.jpg'),
                                       fit: BoxFit.cover,
                                     ),
@@ -89,26 +89,26 @@ class Welcome extends StatelessWidget {
                                 ),
                               ],
                             ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                             Column(
                               children: [
                                 Container(
                                   width: 150,
                                   height: 180,
                                   decoration: BoxDecoration(
-                                    image: DecorationImage(
+                                    image: const DecorationImage(
                                       image: AssetImage('assets/images/welcome/1.jpg'),
                                       fit: BoxFit.cover,
                                     ),
                                     borderRadius: BorderRadius.circular(75),
                                   ),
-                                  margin: EdgeInsets.only(bottom: 10),
+                                  margin: const EdgeInsets.only(bottom: 10),
                                 ),
                                 Container(
                                   width: 150,
                                   height: 150,
                                   decoration: BoxDecoration(
-                                    image: DecorationImage(
+                                    image: const DecorationImage(
                                       image: AssetImage('assets/images/welcome/3.jpg'),
                                       fit: BoxFit.cover,
                                     ),
@@ -129,7 +129,7 @@ class Welcome extends StatelessWidget {
                     Column(
                         children: [
                           RichText(
-                            text: TextSpan(
+                            text: const TextSpan(
                                 children: [
                                   TextSpan(
                                     text: 'The ',
@@ -151,13 +151,13 @@ class Welcome extends StatelessWidget {
                                 ]
                             ),
                           ),
-                          Text( 'Makes You Look Your Best',
+                          const Text( 'Makes You Look Your Best',
                             style: TextStyles.heading3Bold,
                           ),
                         ],
                     ),
                   ),
-                  Positioned(
+                  const Positioned(
                     bottom: 130,
                     left: 0,
                     right: 0,
@@ -204,13 +204,13 @@ class Welcome extends StatelessWidget {
                       child: RichText(
                         text: TextSpan(
                           children: [
-                            TextSpan(
+                            const TextSpan(
                               text: 'Already have an account? ',
                               style: TextStyles.smallMedium,
                             ),
                             TextSpan(
                               text: 'Sign In',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: primaryColor,
                                 decoration: TextDecoration.underline,
                               ),

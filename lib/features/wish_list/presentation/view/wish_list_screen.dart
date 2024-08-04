@@ -15,12 +15,12 @@ class WishListScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal:15.0, vertical: 25),
         child: ListView(
-            children:const [
+            children: const [
             CategoriesSction(),
            
-            SizedBox(height: 20),
+           SizedBox(height: 20),
           
-           ProductShowSection()
+          ProductShowSection()
             ],
         ),
       ),

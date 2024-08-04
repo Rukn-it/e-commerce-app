@@ -41,11 +41,11 @@ class DBManger {
   }
 
   //add to table 
-  Future<int> insert(String tbl_name, Map<String, dynamic> row,
-    {String? mainTable_id = null, List<Map<String, dynamic>>? sub_rows = null}) async {
+  Future<int> insert(String tblName, Map<String, dynamic> row,
+    {String? mainTable_id, List<Map<String, dynamic>>? sub_rows}) async {
   Database localDB = await dbObject;
 
-  int? existingId = await checkIfRowExists(tbl_name, row);
+  int? existingId = await checkIfRowExists(tblName, row);
   if (existingId != null) {
     return existingId;
   }
@@ -56,7 +56,7 @@ class DBManger {
     row.remove(DBManger.COL_ID);
   }
 
-  int id = await localDB.insert(tbl_name, row);
+  int id = await localDB.insert(tblName, row);
 
   sub_rows?.forEach((element) {
     element[mainTable_id!] = id;
@@ -65,13 +65,13 @@ class DBManger {
   return id;
 }
 
-Future<int?> checkIfRowExists(String tbl_name, Map<String, dynamic> row) async {
+Future<int?> checkIfRowExists(String tblName, Map<String, dynamic> row) async {
   Database localDB = await dbObject;
 
   String whereClause = row.keys.map((key) => '$key = ?').join(' AND ');
   List<Object?> whereArgs = row.values.toList();
 
-  List<Map<String, dynamic>> result = await localDB.query(tbl_name,
+  List<Map<String, dynamic>> result = await localDB.query(tblName,
       where: whereClause, whereArgs: whereArgs);
 
   if (result.isNotEmpty) {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:trailing_e_commerce_app/core/constants/app_colors.dart';
 import 'package:trailing_e_commerce_app/features/home/widgets/nav_bar/items.dart';
 
 class NavBar extends StatefulWidget {

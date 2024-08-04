@@ -6,7 +6,8 @@ import '../../core/core.dart';
 
 
 class CategoriesSction extends StatefulWidget {
-  const CategoriesSction({super.key});
+   const CategoriesSction({super.key});
+  
 
   @override
   State<CategoriesSction> createState() => _CategoriesSctionState();
@@ -14,7 +15,7 @@ class CategoriesSction extends StatefulWidget {
 
 class _CategoriesSctionState extends State<CategoriesSction> {
     int _selectedIndex = 0;
-
+    List<String> categoreis_title = ["All", "Jacket", "Shirt", "Pant", "T-Shirt"];
   @override
   Widget build(BuildContext context) {
      double screenHeight = MediaQuery.of(context).size.height;
@@ -24,13 +25,12 @@ class _CategoriesSctionState extends State<CategoriesSction> {
                 width:screenWidth ,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 5,
+                    itemCount: categoreis_title.length,
                     itemBuilder: (ctx, index) {
                       return InkWell(
                         onTap: () {
                           setState(() {
                             _selectedIndex = index;
-                           
                           });
                         },
                         child: Container(
@@ -48,7 +48,7 @@ class _CategoriesSctionState extends State<CategoriesSction> {
                           child: Center(
                             child: 
                             //TO-DO:put category name from API here 
-                            Text("All",
+                            Text(categoreis_title[index],
                             style:_selectedIndex == index?
                             TextStyles.largeBold
                             .copyWith(

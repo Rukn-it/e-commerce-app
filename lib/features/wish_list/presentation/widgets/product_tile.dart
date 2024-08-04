@@ -42,7 +42,7 @@ class _ProductTileState extends State<ProductTile> {
                 borderRadius: BorderRadius.circular(15),
                 color: primaryColor,
                 image: DecorationImage(
-                 image: AssetImage(widget.product.images![0]),
+                 image: NetworkImage(widget.product.images![0]),
                  fit: BoxFit.cover,
                ), 
               ),
@@ -67,7 +67,7 @@ class _ProductTileState extends State<ProductTile> {
               ),
             ),
           ),
-          Expanded(
+          Flexible(
           flex: 2,
         child: Padding(
           padding:const EdgeInsets.only(left:8.0, top: 10),
@@ -77,15 +77,21 @@ class _ProductTileState extends State<ProductTile> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    widget.product.title??"",
-                    style: TextStyles.largeMedium,
-                    softWrap: true,
+                  ConstrainedBox(
+                    constraints: const BoxConstraints(maxHeight: 20, maxWidth: 120),
+                    child: Text(
+                      widget.product.title??"",
+                      style: TextStyles.largeMedium,
+                      softWrap: true,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Icon(Icons.star, color: Colors.yellow, size: 20),
-                      Text(widget.product.price.toString(),
+                      const Icon(Icons.star, color: Colors.yellow, size: 20),
+                      Text("4.5",
                        style: TextStyles.smallMedium
                        .copyWith(color: Colors.black45),)
                     ],
@@ -93,7 +99,7 @@ class _ProductTileState extends State<ProductTile> {
                 ],
               ),
              const SizedBox(height: 8,),
-            const Text("\$ 83.97 ",
+             Text("\$ ${widget.product.price} ",
                 style: TextStyles.xLargeBold)
             ],
           ),

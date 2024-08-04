@@ -40,7 +40,10 @@ const  ProductShowSection({
         itemBuilder: (BuildContext context, int index) {
       
           return 
-          ProductTile(screenHeight: screenHeight, screenWeidth: screenWeidth,product:products[index]);
+          ProductTile(
+           screenHeight: screenHeight,
+           screenWeidth: screenWeidth,
+           product:products[index]);
           
         },
       ),
