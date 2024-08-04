@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:trailing_e_commerce_app/features/welcome_screen/presentation/view/welcome_screen.dart';
 import 'presentation/view/onboarding_screen.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'presentation/view/providers/onboarding_provider.dart';
+
+import 'providers/onboarding_provider.dart';
+
 
 class AppRoutes {
   static GoRouter createRouter(WidgetRef ref) {
@@ -11,15 +12,15 @@ class AppRoutes {
 
     return GoRouter(
       initialLocation: isOnboardingCompleted
-          ? '/features/welcome_screen/presentation/view'
-          : '/features/onboarding_screen/presentation/view',
+          ? '/welcome'
+          : '/',
       routes: [
         GoRoute(
-          path: '/features/onboarding_screen/presentation/view',
-          builder: (context, state) => OnbordingScreen(),
+          path: '/',
+          builder: (context, state) => OnboardingScreen(),
         ),
         GoRoute(
-          path: '/features/welcome_screen/presentation/view',
+          path: '/welcome',
           builder: (context, state) => WelcomeBody(),
         ),
       ],

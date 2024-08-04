@@ -1,8 +1,9 @@
+/*this is header-section find in widget file */
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../core/constants/text_styles.dart';
-import '../providers/onboarding_provider.dart';
+import 'package:trailing_e_commerce_app/features/onboarding_screen/presentation/widgets/widget.dart';
+import '../../../../../../core/constants/text_styles.dart';
 
 class SkipSection extends ConsumerWidget {
   const SkipSection({super.key});
@@ -17,8 +18,8 @@ class SkipSection extends ConsumerWidget {
             await ref
                 .read(onboardingNotifierProvider.notifier)
                 .completeOnboarding();
-            context.go('/features/welcome_screen/presentation/view');},
-          child:  Text( 'Skip',
+            context.go('/welcome');},
+          child:  const Text( 'Skip',
             style: TextStyles.smallRegular ,
           ),
         )

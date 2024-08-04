@@ -1,3 +1,4 @@
+/*  data for 3 pages  */
 import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/font_weights.dart';
