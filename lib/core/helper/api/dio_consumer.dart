@@ -27,14 +27,11 @@ class DioConsumer extends ApiConsumer {
     Map<String, dynamic>? queryParameters,
   }) async {
     try {
-      print(5);
       final response =
           await dio.get(path, data: data, queryParameters: queryParameters);
-          print(response.data);
-          print(6);
+
       return response.data;
     } on DioException catch (e) {
-      print("10");
       handleDioExceptions(e);
     }
   }

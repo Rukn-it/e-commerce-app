@@ -1,8 +1,7 @@
 /*
 HomeSearchBar: to find items based on filter
  */
-import
-'package:flutter/material.dart';
+import'package:flutter/material.dart';
 import 'package:trailing_e_commerce_app/core/constants/app_colors.dart';
 
 class HomeSearchBar extends StatelessWidget {
@@ -12,18 +11,19 @@ class HomeSearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
+        const Expanded(
             child: SearchBar(
-
-              shadowColor: MaterialStatePropertyAll(Colors.transparent),
-          side: MaterialStatePropertyAll(const BorderSide(color: Colors.grey)),
-          leading: const Icon(
+          shadowColor: MaterialStatePropertyAll(Colors.transparent),
+          side: MaterialStatePropertyAll(BorderSide(color: Colors.grey)),
+          leading: Icon(
             Icons.search,
             color: primaryColor,
           ),
           backgroundColor: MaterialStatePropertyAll(Colors.white),
           hintText: "Search",
-          hintStyle: MaterialStatePropertyAll(const TextStyle(fontSize: 15)),
+          hintStyle: MaterialStatePropertyAll(TextStyle(fontSize: 15)),
+
+
         )),
         const SizedBox(width: 10),
         Container(

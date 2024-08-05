@@ -42,7 +42,7 @@ _checkAuth(BuildContext context)async{
       // if(SharedPrefsHelper.getString('token')==null) {
       //   return LoginPage();
       // } else {
-        return  WishListScreen();
+        return  HomePage();
       // }
     }));
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:trailing_e_commerce_app/features/home/widgets/flash_sale/header/timer_components.dart';
+
+import '../../widgets.dart';
 
 class FlashSaleHeader extends StatelessWidget {
   const FlashSaleHeader({super.key});
