@@ -15,6 +15,7 @@ class HomePage extends ConsumerWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
+
           padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 5),
           child: CustomScrollView(
             slivers: [
@@ -56,6 +57,7 @@ class HomePage extends ConsumerWidget {
                 child: Container(
                   height: AppDimensions.widgetHeight,
                 ),
+
               ),
             ],
           ),
