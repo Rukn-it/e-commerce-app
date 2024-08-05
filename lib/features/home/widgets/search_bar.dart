@@ -11,28 +11,20 @@ class HomeSearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-       // هبة: اني الي علقت ذا  لأنه يطلع عندي خطأ اتمنى ألا يتم دمجه
-        // const Expanded(
-        //     child: SearchBar(
-        //   shadowColor: WidgetStatePropertyAll(Colors.transparent),
-        //   side: WidgetStatePropertyAll(BorderSide(color: Colors.grey)),
-        //   leading: Icon(
-        //     Icons.search,
-        //     color: primaryColor,
-        //   ),
-        //   backgroundColor: WidgetStatePropertyAll(Colors.white),
-        //   hintText: "Search",
-        //   hintStyle: MaterialStatePropertyAll(TextStyle(fontSize: 15)),
 
-        //       shadowColor: MaterialStatePropertyAll(Colors.transparent),
-        //   side: MaterialStatePropertyAll(const BorderSide(color: Colors.grey)),
-        //   leading: const Icon(
-        //     Icons.search,
-        //     color: primaryColor,
-        //   ),
-        //   backgroundColor: MaterialStatePropertyAll(Colors.white),
-        //   hintText: "Search",
-        //   hintStyle: MaterialStatePropertyAll(const TextStyle(fontSize: 15)),
+        const Expanded(
+            child: SearchBar(
+          shadowColor: MaterialStatePropertyAll(Colors.transparent),
+          side: MaterialStatePropertyAll(BorderSide(color: Colors.grey)),
+          leading: Icon(
+            Icons.search,
+            color: primaryColor,
+          ),
+          backgroundColor: MaterialStatePropertyAll(Colors.white),
+          hintText: "Search",
+          hintStyle: MaterialStatePropertyAll(TextStyle(fontSize: 15)),
+
+
 
         // )),
         const SizedBox(width: 10),

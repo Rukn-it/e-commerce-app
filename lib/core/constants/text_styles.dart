@@ -83,6 +83,7 @@ abstract final class TextStyles {
     fontSize: 12,
     fontWeight: FontWeights.regular,
     fontFamily: appFont,
+    color: primaryColor,
   );
   static const TextStyle smallMedium = TextStyle(
     fontSize: 12,
@@ -101,5 +102,6 @@ abstract final class TextStyles {
     fontSize: 10,
     fontWeight: FontWeights.bold,
     fontFamily: appFont,
+
   );
 }

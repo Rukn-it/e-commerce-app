@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:trailing_e_commerce_app/features/home/widgets/nav_bar/items.dart';
 
+import '../../../product_details/presenation/product_details_screen.dart';
+import '../../../wish_list/presentation/view/wish_list_screen.dart';
+
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
 
@@ -16,7 +19,7 @@ class _NavBarState extends State<NavBar> {
       _selectedIndex = index;
     });
   }
-
+//todo: must be changed to riverpod
   @override
   Widget build(BuildContext context) {
     final List<NavigationItem> items = [
@@ -31,13 +34,23 @@ class _NavBarState extends State<NavBar> {
         outlinedIcon: Icons.shopping_bag_outlined,
 
         isSelected: _selectedIndex == 1,
-        onPressed: () => _onItemTapped(1),
+        onPressed: () {
+          _onItemTapped(1);
+          Navigator.of(context).pushNamed( ProductDetailsScreen.routeName);
+          _onItemTapped(0);
+
+        },
       ),
       NavigationItem(
         filledIcon: Icons.favorite,
         outlinedIcon:Icons.favorite_outline,
         isSelected: _selectedIndex == 2,
-        onPressed: () => _onItemTapped(2),
+        onPressed: () {
+          _onItemTapped(2);
+          Navigator.of(context).pushNamed( WishListScreen.routeName);
+          _onItemTapped(0);
+
+        },
       ),
       NavigationItem(
         filledIcon: Icons.person,

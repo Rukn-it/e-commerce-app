@@ -6,6 +6,8 @@ import '../widgets/product_show_sction.dart';
 
 class WishListScreen extends StatelessWidget {
    const WishListScreen({super.key});
+   static const routeName = '/WishListScreen';
+
   @override
   Widget build(BuildContext context) {
   

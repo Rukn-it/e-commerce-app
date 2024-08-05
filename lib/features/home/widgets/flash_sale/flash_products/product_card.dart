@@ -1,23 +1,15 @@
-/*
-ProductCard: To view product information
- */
-
 import 'package:flutter/material.dart';
-//todo navigate no product info
+
 class ProductCard extends StatelessWidget {
   final String imageUrl;
   final String productName;
-  final double rating;
   final double price;
-  final VoidCallback onLoveButtonPressed;
 
   const ProductCard({
     Key? key,
     required this.imageUrl,
     required this.productName,
-    required this.rating,
     required this.price,
-    required this.onLoveButtonPressed,
   }) : super(key: key);
 
   @override
@@ -27,65 +19,57 @@ class ProductCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
-      color: Colors.transparent, // Transparent background
-      child: Wrap(
-        children: [
-          Container(
-            width: double.infinity,
-            height: 170,
-            decoration: BoxDecoration(
-              borderRadius:
-                  const BorderRadius.all( Radius.circular(12)),
-              image: DecorationImage(
-                image: NetworkImage(imageUrl),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Stack(
-              children: [
-                Positioned(
-                  top: 8,
-                  right: 8,
-                  child: IconButton(
-                    icon:
-                        const Icon(Icons.favorite_border, color: Colors.white),
-                    onPressed: onLoveButtonPressed,
-                  ),
+      color: Colors.transparent,
+      child: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 200,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+                image: DecorationImage(
+                  image: NetworkImage(imageUrl),
+                  fit: BoxFit.cover,
                 ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 8),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              ),
+              child: Stack(
                 children: [
-                  Text(
-                    productName,
-
-                  ),
-                  const SizedBox(height: 4),
-                  Row(
-                    children: [
-                      const Icon(Icons.star,color: Colors.yellow,),
-                      Text(rating.toString())
-                    ]
+                  Positioned(
+                    top: 8,
+                    right: 8,
+                    child: IconButton(
+                      icon: const Icon(Icons.favorite_border,
+                          color: Colors.white),
+                      onPressed: () {
+                        // Handle button press logic here
+                      },
+                    ),
                   ),
                 ],
               ),
-              const SizedBox(height: 8),
-              Text(
-                '\$${price.toStringAsFixed(2)}',
-
+            ),
+            Flexible(
+              flex: 2,
+              child: Text(
+                productName,
+                overflow: TextOverflow.ellipsis,
               ),
-              ElevatedButton(onPressed: (){
-              showDialog(context: context, builder: (context) => AlertDialog.adaptive(),);
-              }, child: Text("data"))
-            ],
-          ),
-        ],
+            ),
+            Flexible(
+             flex: 1,
+              child: Text(
+                '\$${price.toStringAsFixed(2)}',
+                style: const TextStyle(fontSize: 10, color: Colors.green),
+              ),
+
+            ),
+          ],
+
       ),
     );
   }

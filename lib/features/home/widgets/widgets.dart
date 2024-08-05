@@ -11,3 +11,7 @@ export 'package:trailing_e_commerce_app/features/home/widgets/flash_sale/header/
 export 'package:trailing_e_commerce_app/features/home/widgets/flash_sale/flash_products/flash_products_view.dart';
 export 'package:trailing_e_commerce_app/features/home/widgets/nav_bar/nav_bar.dart';
 export 'package:trailing_e_commerce_app/features/home/widgets/flash_sale/flash_products/product_card.dart';
+export 'package:trailing_e_commerce_app/features/home/widgets/flash_sale/sales_category.dart';
+export 'package:trailing_e_commerce_app/features/home/widgets/reacting_widgets/error_msg.dart';
+export 'package:trailing_e_commerce_app/features/home/widgets/reacting_widgets/animated_loader.dart';
+export 'package:trailing_e_commerce_app/features/home/widgets/flash_sale/header/timer_components.dart';

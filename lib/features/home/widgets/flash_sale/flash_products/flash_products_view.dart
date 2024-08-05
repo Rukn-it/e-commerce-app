@@ -1,70 +1,44 @@
-/*
-FlashProductsView: to view all products base on:
-category name only if they are on sale
- */
-
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../providers/providers.dart';
 import '../../widgets.dart';
 
-class FlashProductsView extends StatelessWidget {
-  FlashProductsView({super.key});
 
-//todo must be replaced to be base on category name , sale
-  final List<Map<String, dynamic>> products = [
-    {
-      'imageUrl': 'https://via.placeholder.com/150',
-      'productName': 'Product 1',
-      'rating': 4.5,
-      'price': 29.99,
-    },
-    {
-      'imageUrl': 'https://via.placeholder.com/150',
-      'productName': 'Product 2',
-      'rating': 4.0,
-      'price': 19.99,
-    },
-    {
-      'imageUrl': 'https://via.placeholder.com/150',
-      'productName': 'Product 1',
-      'rating': 4.5,
-      'price': 29.99,
-    },
-    {
-      'imageUrl': 'https://via.placeholder.com/150',
-      'productName': 'Product 2',
-      'rating': 4.0,
-      'price': 19.99,
-    },
-    // Add more products here
-  ];
+
+class FlashProductsView extends ConsumerWidget {
+  const FlashProductsView({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 200,
-      child: GridView.builder(
-      
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 70, //todo solve this
-        ),
-        itemCount: products.length,
-        itemBuilder: (context, index) {
-          final product = products[index];
-          return ProductCard(
-            imageUrl: product['imageUrl'],
-            productName: product['productName'],
-            rating: product['rating'],
-            price: product['price'],
-            onLoveButtonPressed: () {
-              //todo must be replaced
+
+  Widget build(BuildContext context, WidgetRef ref) {
+    final asyncProducts = ref.watch(productsProvider);
+
+    return asyncProducts.when(
+      loading: () => const SliverToBoxAdapter(
+          child: Center(child: ThreeDotsProgressIndicator())),
+      error: (err, stack) => SliverToBoxAdapter(child: errorMsg()),
+      data: (products) {
+        return SliverGrid(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) {
+              final product = products[index];
+              return ProductCard(
+                imageUrl: product.images[0],
+                productName: product.title,
+                price: product.price,
+              );
+
             },
-          );
-        },
-      ),
+            childCount: products.length,
+          ),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 5,
+              mainAxisSpacing: 10,
+              childAspectRatio: 0.7),
+        );
+      },
     );
   }
 }
