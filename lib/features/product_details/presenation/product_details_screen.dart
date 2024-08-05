@@ -16,15 +16,6 @@ class ProductDetailsScreen extends ConsumerWidget {
   ProductDetailsScreen({super.key});
   static const routeName = '/ProductDetailsScreen';
 
-  List<Color> colors = [
-    Colors.blue,
-    Colors.red,
-    Colors.green,
-    Colors.brown,
-    Colors.purple,
-    Colors.grey,
-  ];
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final productAsyncValue = ref.watch(productProvider(119));
