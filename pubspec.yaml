@@ -44,13 +44,19 @@ dependencies:
   dot_curved_bottom_nav: ^0.0.2
 
 
-  connectivity_plus: ^6.0.3
+  # connectivity_plus: ^6.0.3
   flutter_riverpod: ^2.5.1
   carousel_slider: ^4.2.1
   image_picker: ^1.1.2
+
+  sqflite:
+  path:
+
+
   riverpod_annotation:
   go_router:
   state_notifier:
+
 
 dev_dependencies:
   flutter_test:

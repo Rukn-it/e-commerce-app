@@ -1,3 +1,6 @@
+
+import 'package:flutter/gestures.dart';
+
 import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 import 'Widgets/circle_decoration.dart';
@@ -6,6 +9,7 @@ import 'Widgets/image_grid.dart';
 import 'Widgets/sign_in_text.dart';
 import 'Widgets/start_button.dart';
 import 'Widgets/welcome_text.dart';
+
 
 
 class WelcomeBody extends StatelessWidget {
@@ -40,6 +44,7 @@ class WelcomeBody extends StatelessWidget {
             Positioned(bottom: 35, left: 0, right: 0, child: Center(child: SignInText())),
           ],
         ),
+
       ),
        ),
        ),

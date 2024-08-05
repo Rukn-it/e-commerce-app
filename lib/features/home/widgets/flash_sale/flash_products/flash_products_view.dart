@@ -10,6 +10,7 @@ class FlashProductsView extends ConsumerWidget {
   const FlashProductsView({super.key});
 
   @override
+
   Widget build(BuildContext context, WidgetRef ref) {
     final asyncProducts = ref.watch(productsProvider);
 
@@ -27,6 +28,7 @@ class FlashProductsView extends ConsumerWidget {
                 productName: product.title,
                 price: product.price,
               );
+
             },
             childCount: products.length,
           ),

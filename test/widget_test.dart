@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../lib/app.dart';
+import 'package:trailing_e_commerce_app/app.dart';
 
 
 void main() {

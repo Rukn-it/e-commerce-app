@@ -11,6 +11,7 @@ class HomeSearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
+
         const Expanded(
             child: SearchBar(
           shadowColor: MaterialStatePropertyAll(Colors.transparent),
@@ -24,7 +25,8 @@ class HomeSearchBar extends StatelessWidget {
           hintStyle: MaterialStatePropertyAll(TextStyle(fontSize: 15)),
 
 
-        )),
+
+        // )),
         const SizedBox(width: 10),
         Container(
           width: 40,

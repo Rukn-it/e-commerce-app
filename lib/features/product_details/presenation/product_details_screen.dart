@@ -101,7 +101,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               ),
                               Row(
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.star,
                                     color: Colors.amber,
                                   ),
@@ -117,17 +117,17 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             ],
                           ),
                           const SizedBox(height: 20),
-                          Text(
+                          const Text(
                             'Light Brown Jacket',
                             style: TextStyles.heading3Bold,
                           ),
                           const SizedBox(height: 20),
-                          Text(
+                          const Text(
                             'Product Details',
                             style: TextStyles.xLargeBold,
                           ),
                           const SizedBox(height: 20),
-                          Text(
+                          const Text(
                             'Random text random text random text random text random text random text random text random text random text random text random text random text ',
                           ),
                           Padding(
@@ -138,7 +138,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               color: Colors.grey.withOpacity(0.1),
                             ),
                           ),
-                          Text(
+                          const Text(
                             'Select Size',
                             style: TextStyles.xLargeBold,
                           ),
@@ -163,7 +163,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                     setState(() {});
                                   },
                                   child: Container(
-                                    padding: EdgeInsetsDirectional.symmetric(
+                                    padding: const EdgeInsetsDirectional.symmetric(
                                         vertical: 10, horizontal: 15),
                                     decoration: BoxDecoration(
                                       border: Border.all(
@@ -189,7 +189,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             ),
                           ),
                           const SizedBox(height: 20),
-                          Text(
+                          const Text(
                             'Select Color:',
                             style: TextStyles.xLargeBold,
                           ),
@@ -239,18 +239,18 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             Container(
               height: 100,
               width: double.infinity,
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
                     blurRadius: 1,
-                    offset: Offset(0, 0),
+                    offset: const Offset(0, 0),
                     color: Colors.black.withOpacity(0.1),
                     spreadRadius: 1,
                   )
                 ],
                 color: Colors.white,
-                borderRadius: BorderRadiusDirectional.only(
+                borderRadius: const BorderRadiusDirectional.only(
                   topEnd: Radius.circular(20),
                   topStart: Radius.circular(20),
                 ),
@@ -284,7 +284,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     onPressed: () {},
                     child: Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.shopping_bag_outlined,
                           color: Colors.white,
                         ),
